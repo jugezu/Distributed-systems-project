@@ -11,7 +11,8 @@ token = None
 
 # add new topic or text to existing topics
 def addTopic():
-
+    global token
+    
     # check token
     if token is None:
         print(Fore.RED+"Login first"+Style.RESET_ALL)
@@ -102,7 +103,7 @@ def register():
         password = str(input("Give password: "))
 
     print()
-    
+
     # call registerUser function to register user
     response= requests.post("http://localhost:5000/register", json={
         "username": username,
